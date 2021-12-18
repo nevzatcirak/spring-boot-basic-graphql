@@ -15,6 +15,10 @@ public class ApproverResolver implements GraphQLResolver<Approver> {
     }
 
     public List<ApprovalProcess> getProcesses(Approver approver) {
-        return approvalProcessDao.getApproverProcesses(approver.getId());
+        return approvalProcessDao.getApproverProcesses(approver.getProcessId());
+    }
+
+    public ApprovalProcess getProcess(Approver approver){
+        return approvalProcessDao.getApproverProcess(approver.getProcessId());
     }
 }

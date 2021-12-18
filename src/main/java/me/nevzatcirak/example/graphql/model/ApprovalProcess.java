@@ -8,7 +8,6 @@ public class ApprovalProcess {
     private String documentId;
     private String creator;
     private String status;
-    private List<String> approverIds;
 
     public String getId() {
         return id;
@@ -50,11 +49,4 @@ public class ApprovalProcess {
         this.status = status;
     }
 
-    public List<String> getApproverIds() {
-        return approverIds;
-    }
-
-    public void setApproverIds(List<String> approverIds) {
-        this.approverIds = approverIds;
-    }
 }

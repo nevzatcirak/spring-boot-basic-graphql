@@ -17,7 +17,7 @@ public class ApproverDao {
         return approvers.stream().filter(approver -> id.equals(approver.getId())).findFirst();
     }
 
-    public List<Approver> getApprovers(List<String> idList) {
-        return approvers.stream().filter(approver -> idList.contains(approver.getId())).collect(Collectors.toList());
+    public List<Approver> getApprovers(String processId) {
+        return approvers.stream().filter(approver -> approver.getProcessId().equals(processId)).collect(Collectors.toList());
     }
 }

@@ -17,17 +17,16 @@ public class ApprovalProcessDao {
         return approvalProcesses.stream().skip(offset).limit(count).collect(Collectors.toList());
     }
 
-    public Optional<ApprovalProcess> getApproverProcess(String approver) {
-        return approvalProcesses.stream().filter(process -> process.getApproverIds().stream()
-                .anyMatch(id -> id.equals(approver))).findFirst();
+    public List<ApprovalProcess> getApproverProcesses(String processId) {
+        return approvalProcesses.stream().filter(process -> process.getId().equals(processId)).collect(Collectors.toList());
     }
 
-    public List<ApprovalProcess> getApproverProcesses(String approver) {
-        return approvalProcesses.stream().filter(process -> process.getApproverIds().stream()
-                .anyMatch(id -> id.equals(approver))).collect(Collectors.toList());
+    public ApprovalProcess getApproverProcess(String processId) {
+        return approvalProcesses.stream().filter(process -> process.getId().equals(processId)).findFirst().get();
     }
 
-    public void saveProcess(ApprovalProcess approvalProcess) {
+    public ApprovalProcess saveProcess(ApprovalProcess approvalProcess) {
         approvalProcesses.add(0, approvalProcess);
+        return approvalProcess;
     }
 }

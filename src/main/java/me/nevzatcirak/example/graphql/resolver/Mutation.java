@@ -14,16 +14,13 @@ public class Mutation implements GraphQLMutationResolver {
         this.approvalProcessDao = approvalProcessDao;
     }
 
-    public ApprovalProcess saveProcess(String documentType, String documentId, String creator, List<String> approverIds) {
+    public ApprovalProcess saveProcess(String documentType, String documentId, String creator) {
         ApprovalProcess approvalProcess = new ApprovalProcess();
         approvalProcess.setId(UUID.randomUUID().toString());
         approvalProcess.setDocumentType(documentType);
         approvalProcess.setDocumentId(documentId);
         approvalProcess.setCreator(creator);
-        approvalProcess.setApproverIds(approverIds);
         approvalProcess.setStatus("WAITING");
-        approvalProcessDao.saveProcess(approvalProcess);
-
-        return approvalProcess;
+        return approvalProcessDao.saveProcess(approvalProcess);
     }
 }

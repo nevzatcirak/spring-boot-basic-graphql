@@ -22,10 +22,9 @@ public class GraphqlConfiguration {
         for (int processId = 0; processId < 10; ++processId) {
             for (int approverId = 0; approverId < 10; ++approverId) {
                 ApprovalProcess approvalProcess = new ApprovalProcess();
-                approvalProcess.setId("ApprovalProcess_" + approverId + processId);
+                approvalProcess.setId("ApprovalProcess_" + approverId +"_"+ processId);
                 approvalProcess.setDocumentType("ExampleService");
                 approvalProcess.setDocumentId(String.valueOf(processId + approverId));
-                approvalProcess.setApproverIds(new ArrayList<>(approverId));
                 approvalProcesses.add(approvalProcess);
             }
         }
@@ -40,6 +39,8 @@ public class GraphqlConfiguration {
             approver.setId("Approver_" + approverId);
             approver.setUsername("User_ " + approverId);
             approver.setSequenceNumber(approverId);
+            approver.setStatus("WAITING");
+            approver.setProcessId("ApprovalProcess_" + approverId +"_"+ approverId);
             approvers.add(approver);
         }
         return new ApproverDao(approvers);
