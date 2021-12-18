@@ -1,0 +1,25 @@
+type ApprovalProcess {
+  id: ID!
+  documentType: String!
+  documentId: String!
+  creator: String!
+  status: String
+  approverIds: [Approver!]!
+}
+
+type Approver {
+  id: ID!
+  username: String!
+  sequenceNumber: Int!
+  processId: ApprovalProcess!
+}
+
+  # The Root Query for the application
+type Query {
+  recentProcess(count: Int, offset: Int): [ApprovalProcess]!
+}
+
+  # The Root Mutation for the application
+type Mutation {
+  saveProcess(documentType: String!, documentId: String!, creator: String, approverIds: [String!]!) : ApprovalProcess!
+}
