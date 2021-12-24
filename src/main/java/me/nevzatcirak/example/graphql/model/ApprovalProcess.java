@@ -1,7 +1,5 @@
 package me.nevzatcirak.example.graphql.model;
 
-import java.util.List;
-
 public class ApprovalProcess {
     private String id;
     private String documentType;
