@@ -1,6 +1,6 @@
 package me.nevzatcirak.example.graphql.resolver;
 
-import com.coxautodev.graphql.tools.GraphQLResolver;
+import graphql.kickstart.tools.GraphQLResolver;
 import me.nevzatcirak.example.graphql.dao.ApprovalProcessDao;
 import me.nevzatcirak.example.graphql.model.Approver;
 import me.nevzatcirak.example.graphql.model.ApprovalProcess;

@@ -2,7 +2,7 @@ package me.nevzatcirak.example.graphql.resolver;
 
 import java.util.List;
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import me.nevzatcirak.example.graphql.dao.ApprovalProcessDao;
 import me.nevzatcirak.example.graphql.model.ApprovalProcess;
 

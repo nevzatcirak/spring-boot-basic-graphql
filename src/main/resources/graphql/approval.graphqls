@@ -12,7 +12,6 @@ type Approver {
   username: String!
   sequenceNumber: Int!
   status: String!
-  process: ApprovalProcess!
 }
 
 # The Root Query for the application
